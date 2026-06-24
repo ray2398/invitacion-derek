@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+<!-- ===================== SEO ===================== -->
+<title>Bautizo y 2° Cumpleaños de Derek · Temática Cars</title>
+<meta name="description" content="Acompáñanos a celebrar el Bautizo y 2° cumpleaños de Derek. Una fiesta con la temática de Cars — Radiator Springs, ¡ka-chow!" />
+<meta name="theme-color" content="#D62828" />
+<meta name="author" content="Familia de Derek" />
+
+<!-- ===================== OPEN GRAPH (WhatsApp / Facebook) ===================== -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Bautizo y 2° Cumpleaños de Derek 🏎️" />
+<meta property="og:description" content="¡Estás invitado! Acompáñanos a celebrar — temática Cars, Radiator Springs." />
+<meta property="og:image" content="assets/img/og-cover.jpg" />
+<meta property="og:locale" content="es_MX" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- ===================== FAVICON TEMÁTICO (rueda de carreras) ===================== -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23111'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23D62828'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23F4D03F'/%3E%3C/svg%3E" />
+
+<!-- ===================== TIPOGRAFÍAS ===================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Bungee&family=Oswald:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===== Barra de progreso de scroll ===== -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ===== Confeti de bienvenida ===== -->
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<!-- ===== Audio de fondo (Sh-Boom) ===== -->
+<audio id="bg-audio" loop preload="none">
+  <source src="assets/audio/sh-boom.mp3" type="audio/mpeg" />
+</audio>
+
+<!-- ===== Botón flotante de música ===== -->
+<button id="music-btn" class="float-btn" aria-label="Reproducir o pausar música">
+  <span class="music-ic" aria-hidden="true">♪</span>
+  <span class="music-eq"><i></i><i></i><i></i><i></i></span>
+</button>
+<span id="music-hint" class="music-hint" aria-hidden="true">🎵 Toca para escuchar</span>
+
+<!-- ===== Botón volver arriba ===== -->
+<button id="top-btn" class="float-btn top-btn" aria-label="Volver arriba">▲</button>
+
+
+<!-- ============================================================
+     SECCIÓN 1 · PORTADA
+     ============================================================ -->
+<section id="portada" class="section">
+  <!-- Cielo + atardecer + parallax -->
+  <div class="sky" data-depth="0.1">
+    <div class="sun"></div>
+    <div class="cloud c1">☁</div>
+    <div class="cloud c2">☁</div>
+    <div class="cloud c3">☁</div>
+  </div>
+  <svg class="mesa back" viewBox="0 0 1440 220" preserveAspectRatio="none" data-depth="0.04">
+    <path fill="#b5572f" d="M0,220 L0,150 L120,150 L150,90 L320,90 L350,150 L600,150 L640,60 L820,60 L860,150 L1100,150 L1140,100 L1320,100 L1360,160 L1440,160 L1440,220 Z"/>
+  </svg>
+  <svg class="mesa mid" viewBox="0 0 1440 220" preserveAspectRatio="none" data-depth="0.02">
+    <path fill="#9c3d1e" d="M0,220 L0,170 L90,170 L130,120 L300,120 L330,170 L520,170 L560,100 L740,100 L780,170 L1000,170 L1040,130 L1240,130 L1280,175 L1440,175 L1440,220 Z"/>
+  </svg>
+
+  <!-- Carretera Ruta 66 en movimiento -->
+  <div class="road">
+    <div class="road-dashes"></div>
+  </div>
+
+  <div class="portada-content reveal">
+    <!-- Banderas a cuadros (elemento #10, una inclinada a cada lado) -->
+    <div class="flags">
+      <img class="flag-img fl-left" src="assets/img/flag.png" alt="" onerror="this.remove()">
+      <img class="flag-img fl-right" src="assets/img/flag.png" alt="" onerror="this.remove()">
+    </div>
+
+    <!-- Logo "Derek" estilo Cars. Si guardas logo-derek.png, reemplaza al SVG. -->
+    <div class="cars-logo-wrap">
+      <img class="logo-img" src="assets/img/logo-derek.png" alt="Derek"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <svg class="logo-svg" viewBox="0 0 600 360" style="display:none" role="img" aria-label="Derek">
+        <defs>
+          <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffffff"/><stop offset=".42" stop-color="#c2cad2"/>
+            <stop offset=".52" stop-color="#737d86"/><stop offset=".62" stop-color="#cbd3db"/>
+            <stop offset="1" stop-color="#9aa3ab"/>
+          </linearGradient>
+          <linearGradient id="redplate" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ff5246"/><stop offset=".5" stop-color="#D62828"/><stop offset="1" stop-color="#9c0f06"/>
+          </linearGradient>
+        </defs>
+        <polygon points="135,78 24,20 168,96" fill="url(#chrome)" stroke="#5a6168" stroke-width="2"/>
+        <polygon points="465,78 576,20 432,96" fill="url(#chrome)" stroke="#5a6168" stroke-width="2"/>
+        <path d="M64,74 H536 Q566,74 560,116 L300,256 L40,116 Q34,74 64,74 Z" fill="url(#chrome)"/>
+        <path d="M86,90 H514 Q536,90 531,124 L300,232 L69,124 Q64,90 86,90 Z" fill="url(#redplate)" stroke="#5a0a04" stroke-width="2"/>
+        <polygon points="224,238 376,238 300,308" fill="url(#chrome)" stroke="#5a6168" stroke-width="2"/>
+        <polygon points="250,240 350,240 300,286" fill="#262b31"/>
+        <text x="300" y="186" text-anchor="middle" font-family="Pacifico,cursive" font-size="100"
+              fill="#ffffff" stroke="#737d86" stroke-width="2.5" paint-order="stroke">Derek</text>
+      </svg>
+    </div>
+
+    <h1 class="portada-title shine">
+      Acompáñanos a celebrar el<br>
+      <strong>Bautizo y 2° Cumpleaños</strong><br>
+      de nuestro hijo <span class="name">Derek</span>
+    </h1>
+
+    <!-- Personajes -->
+    <div class="cast">
+      <div class="slot car-main pop" data-pop="1">
+        <img class="character" src="assets/img/mcqueen.png" alt="Rayo McQueen"
+             onerror="this.closest('.slot').classList.add('missing')">
+        <div class="ground-shadow"></div>
+        <div class="marker"><span class="ic">🏎️</span><span class="tag">Rayo McQueen</span><span class="hint">assets/img/mcqueen.png</span></div>
+      </div>
+      <div class="slot car-side pop" data-pop="2">
+        <img class="character" src="assets/img/mate.png" alt="Mate"
+             onerror="this.closest('.slot').classList.add('missing')">
+        <div class="ground-shadow"></div>
+        <div class="marker"><span class="ic">🚚</span><span class="tag">Mate</span><span class="hint">assets/img/mate.png</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Número 95 + sticker Rust-eze (posicionados a nivel de sección) -->
+  <span class="deco num95">
+    <img src="assets/img/numero-95.png" alt="95" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <svg viewBox="0 0 220 180" style="display:none" aria-label="95">
+      <defs><linearGradient id="g95" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#ffc400"/><stop offset=".5" stop-color="#ff7a00"/><stop offset="1" stop-color="#e01e0f"/>
+      </linearGradient></defs>
+      <g transform="skewX(-9)">
+        <text x="118" y="142" text-anchor="middle" font-family="Bungee,sans-serif" font-size="150" fill="none" stroke="#ffffff" stroke-width="18">95</text>
+        <text x="118" y="142" text-anchor="middle" font-family="Bungee,sans-serif" font-size="150" fill="url(#g95)" stroke="#111" stroke-width="9" paint-order="stroke">95</text>
+      </g>
+    </svg>
+  </span>
+  <div class="scroll-cue" aria-hidden="true"><span class="dot"></span><span>Desliza</span></div>
+</section>
+
+<div class="checker-strip"></div>
+
+
+<!-- ============================================================
+     SECCIÓN 2 · MENSAJE ESPECIAL
+     ============================================================ -->
+<section id="mensaje" class="section">
+  <div class="msg-inner reveal">
+    <!-- Tarjeta de mensaje -->
+    <div class="frame-card">
+      <h2 class="msg-title">Un mensaje para ti</h2>
+      <div class="msg-divider"><span></span><b>🏁</b><span></span></div>
+
+      <!-- Contenedor de fotografía -->
+      <div class="photo-slot">
+        <img src="assets/img/derek.jpg" alt="Derek"
+             onerror="this.closest('.photo-slot').classList.add('missing')">
+        <div class="photo-marker">
+          <span class="ic">📷</span>
+          <span class="tag">Foto de Derek</span>
+          <span class="hint">assets/img/derek.jpg</span>
+        </div>
+      </div>
+
+      <p class="msg-text">
+        “Dicen que el agua purifica, que la luz guía y que la fe mueve montañas.
+        Yo aún no sé nada de eso… pero pronto lo descubriré.
+        <br><br>
+        El día de mi Bautismo será mi primer gran encuentro con Dios, y no hay
+        nadie mejor para acompañarme en ese camino que alguien tan especial como tú.”
+      </p>
+    </div>
+    <img class="mate-welcome" src="assets/img/mate.png?v=2" alt="Mate te da la bienvenida" onerror="this.remove()">
+  </div>
+</section>
+
+<div class="checker-strip"></div>
+
+
+<!-- ============================================================
+     SECCIÓN 3 · CUENTA REGRESIVA + PADRES + PADRINOS
+     ============================================================ -->
+<section id="cuenta" class="section">
+  <div class="cuenta-inner reveal">
+    <div class="kicker light">🏁 Marca tu calendario 🏁</div>
+    <h2 class="event-date" id="fecha-texto">Domingo 26 de Julio</h2>
+
+    <div class="dash-frame">
+      <div class="dash-sub">Faltan</div>
+      <div class="gauges" id="gauges">
+        <div class="gauge"><div class="num" id="cd-d">00</div><div class="lbl">Días</div></div>
+        <div class="gauge"><div class="num" id="cd-h">00</div><div class="lbl">Horas</div></div>
+        <div class="gauge"><div class="num" id="cd-m">00</div><div class="lbl">Min</div></div>
+        <div class="gauge"><div class="num" id="cd-s">00</div><div class="lbl">Seg</div></div>
+      </div>
+      <div class="race-day-msg" id="race-day">🏁 ¡Hoy es el gran día — ka-chow! 🏁</div>
+    </div>
+
+    <!-- Padres y padrinos como placas metálicas -->
+    <div class="plates">
+      <div class="plate-group">
+        <div class="plate-title">Mis Papás</div>
+        <div class="plate"><span class="role">Mamá</span><span class="pname" id="mama">———</span></div>
+        <div class="plate"><span class="role">Papá</span><span class="pname" id="papa">———</span></div>
+      </div>
+      <div class="plate-group">
+        <div class="plate-title">Mis Padrinos</div>
+        <div class="plate"><span class="role">Madrina</span><span class="pname" id="madrina">———</span></div>
+        <div class="plate"><span class="role">Padrino</span><span class="pname" id="padrino">———</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="checker-strip"></div>
+
+
+<!-- ============================================================
+     SECCIÓN 4 · CEREMONIA Y RECEPCIÓN
+     ============================================================ -->
+<section id="evento" class="section">
+  <img class="scene-deco cactus-l" src="assets/img/cactus.png?v=2" alt="" onerror="this.remove()">
+  <img class="scene-deco cactus-r" src="assets/img/cactus.png?v=2" alt="" onerror="this.remove()">
+  <img class="scene-deco cono cono-1" src="assets/img/cono.png" alt="" onerror="this.remove()">
+  <img class="scene-deco cono cono-2" src="assets/img/cono.png" alt="" onerror="this.remove()">
+  <img class="scene-deco cono cono-3" src="assets/img/cono.png" alt="" onerror="this.remove()">
+  <div class="evento-inner reveal">
+    <span class="deco route66">
+      <img src="assets/img/senal-flecha.png" alt="Señal de curva" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <svg viewBox="0 0 200 210" style="display:none" aria-label="Route 66">
+        <path d="M100 6 C70 6 64 24 36 22 C20 21 12 34 18 50 C24 64 8 70 10 90 C12 112 40 110 44 128 C50 156 100 204 100 204 C100 204 150 156 156 128 C160 110 188 112 190 90 C192 70 176 64 182 50 C188 34 180 21 164 22 C136 24 130 6 100 6 Z"
+              fill="#F4D03F" stroke="#111" stroke-width="7"/>
+        <line x1="34" y1="74" x2="166" y2="74" stroke="#111" stroke-width="6"/>
+        <text x="100" y="62" text-anchor="middle" font-family="Oswald,sans-serif" font-weight="700" font-size="30" fill="#111">ROUTE</text>
+        <text x="100" y="168" text-anchor="middle" font-family="Bungee,sans-serif" font-size="86" fill="#111">66</text>
+      </svg>
+    </span>
+    <div class="kicker">📍 Itinerario del día</div>
+    <h2 class="section-title dark">Ceremonia &amp; Recepción</h2>
+
+    <div class="signs">
+      <!-- Ceremonia -->
+      <div class="road-sign">
+        <div class="sign-badge">⛪</div>
+        <div class="sign-label">Ceremonia Religiosa</div>
+        <div class="sign-place" id="parroquia">Parroquia San Francisco</div>
+        <div class="sign-time" id="hora-iglesia">12:00 PM</div>
+        <button class="map-btn" data-map="iglesia">Ver Ubicación</button>
+      </div>
+
+      <!-- Recepción -->
+      <div class="road-sign alt">
+        <div class="sign-badge">🎉</div>
+        <div class="sign-label">Recepción</div>
+        <div class="sign-place" id="recepcion">Hotel Santa Luisa Finca Boutique</div>
+        <div class="sign-time" id="hora-recepcion">3:00 PM</div>
+        <button class="map-btn" data-map="recepcion">Ver Ubicación</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="checker-strip"></div>
+
+
+<!-- ============================================================
+     SECCIÓN 5 · REGALOS Y CONFIRMACIÓN
+     ============================================================ -->
+<section id="regalos" class="section">
+  <div class="regalos-inner reveal">
+    <!-- Copa Pistón con alas (SVG; si guardas piston-cup.png, lo reemplaza) -->
+    <img class="piston-cup-img" src="assets/img/piston-cup.png" alt="Copa Pistón"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <svg class="piston-cup" viewBox="0 0 300 250" aria-label="Copa Pistón" style="display:none">
+      <defs><linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#fff2b0"/><stop offset=".5" stop-color="#f7c948"/><stop offset="1" stop-color="#b8860b"/>
+      </linearGradient></defs>
+      <!-- alas -->
+      <g fill="url(#gold)" stroke="#8a6508" stroke-width="2">
+        <path d="M96 66 L8 46 L96 76 Z"/><path d="M96 82 L26 66 L96 90 Z"/>
+        <path d="M204 66 L292 46 L204 76 Z"/><path d="M204 82 L274 66 L204 90 Z"/>
+      </g>
+      <!-- cuerpo (pistón) -->
+      <rect x="96" y="34" width="108" height="72" rx="8" fill="url(#gold)" stroke="#8a6508" stroke-width="3"/>
+      <rect x="104" y="50" width="92" height="8" fill="#111"/>
+      <rect x="104" y="92" width="92" height="8" fill="#111"/>
+      <text x="150" y="82" text-anchor="middle" font-family="Bungee,sans-serif" font-size="22" fill="#111">PISTON</text>
+      <!-- vástago -->
+      <path d="M134 106 H166 L160 176 H140 Z" fill="url(#gold)" stroke="#8a6508" stroke-width="2"/>
+      <!-- biela -->
+      <path d="M108 178 Q150 150 192 178 L186 198 Q150 174 114 198 Z" fill="url(#gold)" stroke="#8a6508" stroke-width="2"/>
+      <!-- base -->
+      <ellipse cx="150" cy="226" rx="78" ry="18" fill="#1c1f24"/>
+      <rect x="108" y="206" width="84" height="20" rx="4" fill="url(#gold)" stroke="#8a6508" stroke-width="2"/>
+    </svg>
+
+    <h2 class="section-title">Sugerencia de Regalo</h2>
+    <p class="regalo-text">Mesa de regalos <strong>Liverpool</strong></p>
+    <p class="regalo-num">Evento No. <span id="liverpool-num">—————</span></p>
+    <button class="btn-primary" id="btn-liverpool">🎁 Ver Mesa de Regalos</button>
+
+    <div class="crew-deco">
+      <img src="assets/img/luigi.png" alt="Luigi" onerror="this.remove()">
+      <img src="assets/img/guido.png" alt="Guido" onerror="this.remove()">
+    </div>
+
+    <div class="divider-flag"></div>
+
+    <div class="confirm-box">
+      <h3 class="confirm-title">Confirmación de Asistencia</h3>
+      <p class="confirm-sub">¡Tu presencia hará esta carrera inolvidable! Confírmanos para apartar tu lugar en la línea de salida.</p>
+      <button class="btn-whatsapp" id="btn-confirmar">
+        <span aria-hidden="true">✓</span> Confirmar Asistencia
+      </button>
+    </div>
+
+    <div class="signature">Con cariño, la familia de Derek<br>⚡ ka-chow ⚡</div>
+  </div>
+  <div class="checker-strip footer-strip"></div>
+</section>
+
+<script src="script.js?v=6"></script>
+</body>
+</html>

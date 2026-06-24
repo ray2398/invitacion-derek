@@ -1,0 +1,24 @@
+IMÁGENES — INVITACIÓN CARS DE DEREK
+====================================
+
+Coloca aquí tus imágenes. La página las toma automáticamente.
+Usa fondo transparente (PNG) y recorte limpio para los personajes.
+
+NOMBRES EXACTOS QUE ESPERA LA PÁGINA:
+
+  mcqueen.png      -> Rayo McQueen (personaje principal de la portada)
+  mate.png         -> Mate (personaje secundario de la portada)
+  derek.jpg        -> Foto real de Derek (sección "Mensaje Especial")
+  og-cover.jpg     -> Imagen de previsualización al compartir en WhatsApp/Facebook
+                      (recomendado 1200 x 630 px)
+
+CONSEJOS:
+- Personajes en PNG transparente, mínimo ~1000 px de ancho.
+- La foto de Derek puede ser JPG; se recorta automáticamente a 4:3.
+- Mientras un archivo no exista, la página muestra un marcador indicando
+  qué va en ese lugar y la ruta exacta del archivo.
+
+AUDIO:
+- La música va en  assets/audio/sh-boom.mp3
+- Puedes reemplazar ese archivo por cualquier MP3; o cambiar la ruta en
+  el objeto CONFIG (campo "cancion") dentro de script.js
