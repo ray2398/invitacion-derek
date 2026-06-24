@@ -9,7 +9,7 @@
 const CONFIG = {
   /* ---- Datos del niño y evento ---- */
   nombreNino: "Derek",
-  fechaEvento: "2026-07-26T12:00:00",   // Domingo 26 de Julio, 12:00 PM (formato AAAA-MM-DDTHH:MM:SS)
+  fechaEvento: "2026-07-26T15:00:00",   // Domingo 26 de Julio, 12:00 PM (formato AAAA-MM-DDTHH:MM:SS)
   fechaTexto: "Domingo 26 de Julio",     // Texto que se muestra en pantalla
 
   /* ---- Padres y padrinos ---- */
